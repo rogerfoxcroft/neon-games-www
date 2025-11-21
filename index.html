@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #05060A;
+            color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(138, 43, 226, 0.05) 50%, rgba(255, 77, 255, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4)) drop-shadow(0 0 40px rgba(255, 77, 255, 0.3));
+            transition: filter 250ms ease-out;
+        }
+
+        .logo:hover {
+            filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 60px rgba(255, 77, 255, 0.5));
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #00D4FF 0%, #FF4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: #11131A;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            transition: all 250ms ease-out;
+            border: 2px solid #1F2330;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 77, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 250ms ease-out;
+            pointer-events: none;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #00D4FF;
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.3);
+        }
+
+        .game-card:hover::before {
+            opacity: 1;
+        }
+
+        .game-card:nth-child(2):hover {
+            border-color: #FF4DFF;
+            box-shadow: 0 12px 24px rgba(255, 77, 255, 0.3);
+        }
+
+        .game-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .game-card:nth-child(1) .game-title {
+            color: #00D4FF;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
+
+        .game-card:nth-child(2) .game-title {
+            color: #FF4DFF;
+            text-shadow: 0 0 15px rgba(255, 77, 255, 0.6);
+        }
+
+        .game-description {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 1.5rem;
+        }
+
+        .game-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .game-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .game-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #8A2BE2;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: #11131A;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            border: 2px solid #1F2330;
+        }
+
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-text {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .coffee-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF4DFF 0%, #8A2BE2 100%);
+            color: #05060A;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 1rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            box-shadow: 0 6px 18px rgba(255, 77, 255, 0.4);
+            transition: all 250ms ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coffee-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 500ms ease-out;
+        }
+
+        .coffee-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(255, 77, 255, 0.6);
+        }
+
+        .coffee-button:hover::before {
+            left: 100%;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 280px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 3px;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .game-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem;
+            }
+
+            .coffee-button {
+                font-size: 1rem;
+                padding: 0.875rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo-cropped.png" alt="Neon Games Logo" class="logo">
+            <p class="tagline">No tracking. No ads. No nonsense.</p>
+        </header>
+
+        <div class="games-grid">
+            <div class="game-card">
+                <h2 class="game-title">Tic-Tac-Toe</h2>
+                <p class="game-description">
+                    A neon-styled multi-mode Tic-Tac-Toe game with stunning visuals and smooth animations.
+                </p>
+                <ul class="game-features">
+                    <li>Player vs Player mode</li>
+                    <li>Player vs CPU with smart AI</li>
+                    <li>CPU vs CPU spectator mode</li>
+                    <li>Beautiful neon aesthetics</li>
+                    <li>Smooth animations and effects</li>
+                </ul>
+            </div>
+
+            <div class="game-card">
+                <h2 class="game-title">Slider Puzzle</h2>
+                <p class="game-description">
+                    A neon-styled sliding puzzle game that challenges your problem-solving skills.
+                </p>
+                <ul class="game-features">
+                    <li>Multiple difficulty levels</li>
+                    <li>Smooth tile animations</li>
+                    <li>Move counter and tracking</li>
+                    <li>Game Center integration</li>
+                    <li>Immersive neon design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Enjoying the Games?</h2>
+            <p class="cta-text">
+                If you're having fun with Neon Games, consider supporting the development with a small donation.
+                Your support helps keep the games free and enables new features!
+            </p>
+            <a href="https://www.paypal.com/paypalme/rogerfoxcroft/2" class="coffee-button" target="_blank" rel="noopener noreferrer">
+                Buy Me a Coffee!
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Neon Games. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
