@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Games Privacy Policy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #05060A;
+            color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(138, 43, 226, 0.05) 50%, rgba(255, 77, 255, 0.03) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.4)) drop-shadow(0 0 30px rgba(255, 77, 255, 0.3));
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #00D4FF 0%, #FF4DFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .policy-card {
+            background: #11131A;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            border: 2px solid #1F2330;
+        }
+
+        .policy-meta {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00D4FF;
+            margin: 2rem 0 0.75rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        ul {
+            margin: 1rem 0 0;
+            padding-left: 1.25rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2.5rem;
+            color: #FF4DFF;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .back-link:hover {
+            color: #00D4FF;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .policy-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo-cropped.png" alt="Neon Games Logo" class="logo">
+            <h1>Privacy Policy</h1>
+        </header>
+
+        <section class="policy-card">
+            <p class="policy-meta">Effective date: March 1, 2025</p>
+
+            <p>
+                This Privacy Policy applies to all Neon Games titles and this website. We do not collect,
+                store, or share personal information. Our games are built to be fun without tracking,
+                analytics, or advertising identifiers.
+            </p>
+
+            <h2>Information We Do Not Collect</h2>
+            <p>Neon Games does not collect any of the following:</p>
+            <ul>
+                <li>Personal identifiers such as name, email address, or phone number.</li>
+                <li>Location data, device identifiers, or advertising IDs.</li>
+                <li>Usage analytics, tracking data, or behavioral profiles.</li>
+            </ul>
+
+            <h2>Third-Party Services</h2>
+            <p>
+                Some games may offer Apple Game Center features such as achievements or leaderboards.
+                These services are provided by Apple and are governed by Apple's privacy policy. We do not
+                receive or store personal data from those services.
+            </p>
+
+            <h2>Children's Privacy</h2>
+            <p>
+                We do not knowingly collect personal information from children or any other users. Because
+                we do not collect data at all, no personal information is processed.
+            </p>
+
+            <h2>Changes to This Policy</h2>
+            <p>
+                If we make changes to this policy, we will update the effective date above. Any changes
+                will apply going forward.
+            </p>
+
+            <h2>Contact</h2>
+            <p>
+                If you have questions about this policy, please contact us using the email address listed
+                on the App Store listing for the relevant game.
+            </p>
+
+            <a class="back-link" href="index.html">Back to Neon Games</a>
+        </section>
+    </div>
+</body>
+</html>
