@@ -80,8 +80,16 @@
 
         .tagline {
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: #00D4FF;
             letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .strapline {
+            font-size: 1.125rem;
+            color: #FF4DFF;
+            letter-spacing: 2px;
+            font-style: italic;
         }
 
         .games-grid {
@@ -183,6 +191,37 @@
             position: absolute;
             left: 0;
             color: #8A2BE2;
+        }
+
+        .app-store-link {
+            display: inline-block;
+            margin-top: 1rem;
+            transition: opacity 250ms ease-out, transform 250ms ease-out;
+        }
+
+        .app-store-link:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .app-store-link img {
+            height: 50px;
+            width: auto;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .cta-section {
@@ -310,6 +349,7 @@
         <header>
             <img src="logo-cropped.png" alt="Neon Games Logo" class="logo">
             <p class="tagline">No tracking. No ads. No nonsense.</p>
+            <p class="strapline">Just class games, reimagined.</p>
         </header>
 
         <div class="games-grid">
@@ -325,6 +365,9 @@
                     <li>Beautiful neon aesthetics</li>
                     <li>Smooth animations and effects</li>
                 </ul>
+                <a href="https://apps.apple.com/us/app/neon-ttt/id6755733460" class="app-store-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1729123200" alt="Download on the App Store">
+                </a>
             </div>
 
             <div class="game-card">
@@ -339,6 +382,7 @@
                     <li>Game Center integration</li>
                     <li>Immersive neon design</li>
                 </ul>
+                <div class="coming-soon">Coming Soon...</div>
             </div>
 
             <div class="game-card">
@@ -353,6 +397,9 @@
                     <li>On-screen keyboard plus physical input</li>
                     <li>Three difficulty levels</li>
                 </ul>
+                <a href="https://apps.apple.com/us/app/neon-wordx/id6757393053" class="app-store-link" target="_blank" rel="noopener noreferrer">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1729123200" alt="Download on the App Store">
+                </a>
             </div>
         </div>
 
