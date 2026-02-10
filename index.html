@@ -94,7 +94,7 @@
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(260px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -108,6 +108,8 @@
             border: 2px solid #1F2330;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .game-card::before {
@@ -143,6 +145,11 @@
             box-shadow: 0 12px 24px rgba(0, 255, 156, 0.25);
         }
 
+        .game-card:nth-child(4):hover {
+            border-color: #FFD700;
+            box-shadow: 0 12px 24px rgba(255, 215, 0, 0.3);
+        }
+
         .game-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
@@ -167,6 +174,11 @@
             text-shadow: 0 0 15px rgba(0, 255, 156, 0.6);
         }
 
+        .game-card:nth-child(4) .game-title {
+            color: #FFD700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
         .game-description {
             font-size: 1.125rem;
             line-height: 1.6;
@@ -177,6 +189,7 @@
         .game-features {
             list-style: none;
             margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .game-features li {
@@ -307,7 +320,7 @@
 
         @media (max-width: 1100px) {
             .games-grid {
-                grid-template-columns: repeat(2, minmax(260px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -354,7 +367,7 @@
 
         <div class="games-grid">
             <div class="game-card">
-                <h2 class="game-title">Tic-Tac-Toe</h2>
+                <h2 class="game-title">TTT</h2>
                 <p class="game-description">
                     A neon-styled multi-mode Tic-Tac-Toe game with stunning visuals and smooth animations.
                 </p>
@@ -371,7 +384,7 @@
             </div>
 
             <div class="game-card">
-                <h2 class="game-title">Slider Puzzle</h2>
+                <h2 class="game-title">Slider</h2>
                 <p class="game-description">
                     A neon-styled sliding puzzle game that challenges your problem-solving skills.
                 </p>
@@ -400,6 +413,21 @@
                 <a href="https://apps.apple.com/us/app/neon-wordx/id6757393053" class="app-store-link" target="_blank" rel="noopener noreferrer">
                     <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1729123200" alt="Download on the App Store">
                 </a>
+            </div>
+
+            <div class="game-card">
+                <h2 class="game-title">Snake</h2>
+                <p class="game-description">
+                    A progressive difficulty Snake game where speed increases with each food, earning more points the faster you play.
+                </p>
+                <ul class="game-features">
+                    <li>Speed-based scoring system</li>
+                    <li>Progressive difficulty curve</li>
+                    <li>Earn points for every move</li>
+                    <li>Beginner-friendly start</li>
+                    <li>Infinite skill ceiling</li>
+                </ul>
+                <div class="coming-soon">Coming Soon...</div>
             </div>
         </div>
 
